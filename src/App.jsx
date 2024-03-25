@@ -1,39 +1,40 @@
-import "./App.css";
+import './App.css';
 import {
   RouterProvider,
   createBrowserRouter,
   redirect,
-} from "react-router-dom";
-import DefaultLayout from "./components/DefaultLayout";
-import Login from "./screen/Login";
-import "react-perfect-scrollbar/dist/css/styles.css";
-import { useAuthentication } from "./providers/AuthenticationProvider";
-import VirtualTryOn from "./screen/VirtualTryOn";
-import Home from "./screen/Home";
-import ProductDescriptionGenerate from "./screen/ProductDescriptionGenerate";
-import io from "socket.io-client";
-import { useSave } from "./stores/useStores";
-import { useEffect } from "react";
-import cachedKeys from "./constants/cachedKeys";
-import Callback from "./screen/Callback";
-import FacebookPost from "./screen/FacebookPost";
-import UserProfile from "./screen/UserProfile";
-import VirtualPhotoshoot from "./screen/VirtualPhotoshoot";
-import VirtualDressingRoom from "./screen/VirtualDressingRoom";
-import VirtualModel from "./screen/VirtualModel";
+} from 'react-router-dom';
+import DefaultLayout from './components/DefaultLayout';
+import Login from './screen/Login';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import { useAuthentication } from './providers/AuthenticationProvider';
+import VirtualTryOn from './screen/VirtualTryOn';
+import Home from './screen/Home';
+import ProductDescriptionGenerate from './screen/ProductDescriptionGenerate';
+import io from 'socket.io-client';
+import { useSave } from './stores/useStores';
+import { useEffect } from 'react';
+import cachedKeys from './constants/cachedKeys';
+import Callback from './screen/Callback';
+import FacebookPost from './screen/FacebookPost';
+import UserProfile from './screen/UserProfile';
+import VirtualPhotoshoot from './screen/VirtualPhotoshoot';
+import VirtualDressingRoom from './screen/VirtualDressingRoom';
+import VirtualModel from './screen/VirtualModel';
+import ImageInPaintingPage from './screen/ImageInPainting';
 
-const socket = io("https://a512-123-25-21-211.ngrok-free.app", {
+const socket = io('https://a512-123-25-21-211.ngrok-free.app', {
   retries: 0,
   reconnectionAttempts: 3,
   extraHeaders: {
-    "ngrok-skip-browser-warning": "true",
+    'ngrok-skip-browser-warning': 'true',
   },
 });
 
-socket.on("connect_success", (data) => {
-  console.log("data", data);
+socket.on('connect_success', (data) => {
+  console.log('data', data);
 });
-socket.on("connect_error", (err) => {
+socket.on('connect_error', (err) => {
   console.log(`connect_error due to ${err.message}`);
 });
 
@@ -43,14 +44,14 @@ const App = () => {
   const save = useSave();
   const router = createBrowserRouter([
     {
-      path: "callback",
+      path: 'callback',
       element: <Callback />,
     },
     {
-      path: "/login",
+      path: '/login',
       element: <Login />,
       loader: () => {
-        if (islogged) return redirect("/");
+        if (islogged) return redirect('/');
         return null;
       },
     },
@@ -58,45 +59,49 @@ const App = () => {
       element: <DefaultLayout />,
       children: [
         {
-          path: "/virtual-photoshoot-studio/background-generator",
+          path: '/image-editing/image-inpainting',
+          element: <ImageInPaintingPage />,
+        },
+        {
+          path: '/virtual-photoshoot-studio/background-generator',
           element: <VirtualPhotoshoot />,
         },
         {
-          path: "/virtual-model",
+          path: '/virtual-model',
           element: <VirtualModel />,
         },
         {
-          path: "virtual-dressing-room/dressing",
+          path: 'virtual-dressing-room/dressing',
           element: <VirtualDressingRoom />,
         },
 
         {
-          path: "user-profile",
+          path: 'user-profile',
           element: <UserProfile />,
         },
         {
-          path: "facebook-post",
+          path: 'facebook-post',
           element: <FacebookPost />,
         },
         {
-          path: "/",
+          path: '/',
           element: <Home />,
         },
         {
-          path: "/image-content-writing/product-descriptions",
+          path: '/image-content-writing/product-descriptions',
           element: <ProductDescriptionGenerate />,
         },
         {
-          path: "/image-content-writing/social-media-marketing",
+          path: '/image-content-writing/social-media-marketing',
           element: <ProductDescriptionGenerate />,
         },
         {
-          path: "/image-content-writing/website-seo",
+          path: '/image-content-writing/website-seo',
           element: <ProductDescriptionGenerate />,
         },
 
         {
-          path: "*",
+          path: '*',
           element: <VirtualTryOn />,
         },
         // {
@@ -112,7 +117,7 @@ const App = () => {
         // },
       ],
       loader: () => {
-        if (!islogged) return redirect("/login");
+        if (!islogged) return redirect('/login');
 
         return null;
       },

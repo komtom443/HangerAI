@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { GlobalStyles } from "@mui/material";
@@ -48,6 +48,10 @@ const lightTheme = createTheme({
       text: "#171717",
       switchTheme: "#f3d28a",
       textPrimary: "#6904e9",
+      dragAndDrop: {
+        outline: '',
+        bgcolor: '#2c2b2e'
+      }
     },
     client: {
       cardDark: client["cardDark"],
@@ -531,6 +535,10 @@ const darkTheme = createTheme({
       text: "#f9f9f9",
       switchTheme: "#b9cff3",
       textPrimary: "#6904e9",
+      dragAndDrop: {
+        outline: '#3c3b40',
+        bgcolor: '#2c2b2e'
+      }
     },
     client: {
       cardDark: client["cardDark"],
