@@ -77,10 +77,11 @@ const AssetImage = () => {
           overflowY: 'auto',
           display: 'flex',
           flexWrap: 'wrap',
+          justifyContent: 'center',
           paddingTop: '1rem',
           boxSizing: 'border-box',
           gap: '1rem',
-          justifyContent: 'start',
+          // justifyContent: 'start',
           '::-webkit-scrollbar': {
             width: '12px',
           },

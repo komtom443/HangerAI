@@ -32,6 +32,9 @@ dependencies:
   formik:
     specifier: ^2.4.5
     version: 2.4.5(react@18.2.0)
+  konva:
+    specifier: ^9.3.6
+    version: 9.3.6
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -56,6 +59,9 @@ dependencies:
   react-icons:
     specifier: ^4.11.0
     version: 4.12.0(react@18.2.0)
+  react-konva:
+    specifier: ^18.2.10
+    version: 18.2.10(konva@9.3.6)(react-dom@18.2.0)(react@18.2.0)
   react-perfect-scrollbar:
     specifier: ^1.5.8
     version: 1.5.8(react-dom@18.2.0)(react@18.2.0)
@@ -1671,6 +1677,12 @@ packages:
       '@types/react': 18.2.65
     dev: true
 
+  /@types/react-reconciler@0.28.8:
+    resolution: {integrity: sha512-SN9c4kxXZonFhbX4hJrZy37yw9e7EIxcpHCxQv5JUS18wDE5ovkQKlqQEkufdJCCMfuI9BnjUJvhYeJ9x5Ra7g==}
+    dependencies:
+      '@types/react': 18.2.65
+    dev: false
+
   /@types/react-transition-group@4.4.10:
     resolution: {integrity: sha512-hT/+s0VQs2ojCX823m60m5f0sL5idt9SO6Tj6Dg+rdphGPIeJbJ6CxvBYkgkGKrYeDjvIpKTR38UzmtHJOGW3Q==}
     dependencies:
@@ -2928,6 +2940,15 @@ packages:
       set-function-name: 2.0.2
     dev: true
 
+  /its-fine@1.1.3(react@18.2.0):
+    resolution: {integrity: sha512-mncCA+yb6tuh5zK26cHqKlsSyxm4zdm4YgJpxycyx6p9fgxgK5PLu3iDVpKhzTn57Yrv3jk/r0aK0RFTT1OjFw==}
+    peerDependencies:
+      react: '>=18.0'
+    dependencies:
+      '@types/react-reconciler': 0.28.8
+      react: 18.2.0
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -2981,6 +3002,10 @@ packages:
     dependencies:
       json-buffer: 3.0.1
     dev: true
+
+  /konva@9.3.6:
+    resolution: {integrity: sha512-dqR8EbcM0hjuilZCBP6xauQ5V3kH3m9kBcsDkqPypQuRgsXbcXUrxqYxhNbdvKZpYNW8Amq94jAD/C0NY3qfBQ==}
+    dev: false
 
   /lazy-brush@1.0.1:
     resolution: {integrity: sha512-xT/iSClTVi7vLoF8dCWTBhCuOWqsLXCMPa6ucVmVAk6hyNCM5JeS1NLhXqIrJktUg+caEYKlqSOUU4u3cpXzKg==}
@@ -3332,6 +3357,22 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
+  /react-konva@18.2.10(konva@9.3.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ohcX1BJINL43m4ynjZ24MxFI1syjBdrXhqVxYVDw2rKgr3yuS0x/6m1Y2Z4sl4T/gKhfreBx8KHisd0XC6OT1g==}
+    peerDependencies:
+      konva: ^8.0.1 || ^7.2.5 || ^9.0.0
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+    dependencies:
+      '@types/react-reconciler': 0.28.8
+      its-fine: 1.1.3(react@18.2.0)
+      konva: 9.3.6
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-reconciler: 0.29.0(react@18.2.0)
+      scheduler: 0.23.0
+    dev: false
+
   /react-perfect-scrollbar@1.5.8(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-bQ46m70gp/HJtiBOF3gRzBISSZn8FFGNxznTdmTG8AAwpxG1bJCyn7shrgjEvGSQ5FJEafVEiosY+ccER11OSA==}
     peerDependencies:
@@ -3342,6 +3383,17 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-reconciler@0.29.0(react@18.2.0):
+    resolution: {integrity: sha512-wa0fGj7Zht1EYMRhKWwoo1H9GApxYLBuhoAuXN0TlltESAjDssB+Apf0T/DngVqaMyPypDmabL37vw/2aRM98Q==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.2.0
+      scheduler: 0.23.0
     dev: false
 
   /react-refresh@0.14.0:

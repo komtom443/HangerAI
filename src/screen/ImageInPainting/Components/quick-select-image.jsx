@@ -7,14 +7,13 @@ const QuickSelectImage = () => {
   const { imageHistory } = useImageInPainting();
   const fakeAssets = useMemo(() => {
     const tmp = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
       tmp.push(
         `https://placehold.co/420x280/${i % 2 ? 'red' : 'blue'}/white?text=${i}`
       );
     }
     return tmp;
   }, []);
-  console.log('MKI');
   return (
     <Fragment>
       {imageHistory.map((img, index) => {

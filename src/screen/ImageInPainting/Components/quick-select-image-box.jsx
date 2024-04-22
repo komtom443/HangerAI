@@ -14,7 +14,7 @@ const QuickSelectImageBox = ({ file, isAssets, isUpload }) => {
       return file
     }
     return URL.createObjectURL(file);
-  }, []);
+  }, [file]);
   const [isClicked, setIsClicked] = useState(false);
   const theme = useTheme();
   const mode = theme.palette.mode;
@@ -116,7 +116,7 @@ const QuickSelectImageBox = ({ file, isAssets, isUpload }) => {
         >
           {
             // eslint-disable-next-line react/prop-types
-            file?.name ?? ''
+            typeof file === 'string' ? `Ảnh ${file}`:file?.name ?? ''
           }
         </Typography>
       </Box>

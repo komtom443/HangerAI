@@ -48,7 +48,6 @@ function DragAndDropImg() {
         setCurrentImage(event.dataTransfer.files[0]);
         setAddedImage(event.dataTransfer.files[0])
       }
-      console.log(URL.createObjectURL(event.dataTransfer.files[0]));
       setIsDragOver(false);
     };
 
