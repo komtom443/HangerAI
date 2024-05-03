@@ -5,7 +5,6 @@ import {
   BsFillTagFill,
   BsGoogle,
   BsApple,
-  BsFacebook,
   BsGenderTrans,
   BsFillCalendar2EventFill,
   BsPeopleFill,
@@ -35,9 +34,11 @@ import { CiSettings } from "react-icons/ci";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { LuSun, LuMoon } from "react-icons/lu";
 import { FaWandMagicSparkles } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
 
 const CommonIcons = {
   LogoutIcon,
+  Search: FaSearch,
   Room: MdMeetingRoom,
   Studio: SiObsstudio,
   Tag: BsFillTagFill,
@@ -45,7 +46,6 @@ const CommonIcons = {
   Close: AiOutlineClose,
   Google: BsGoogle,
   Apple: BsApple,
-  Facebook: BsFacebook,
   Gender: BsGenderTrans,
   Size: CgSize,
   Calendar: BsFillCalendar2EventFill,

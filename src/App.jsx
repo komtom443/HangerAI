@@ -22,6 +22,7 @@ import VirtualPhotoshoot from "./screen/VirtualPhotoshoot";
 import VirtualDressingRoom from "./screen/VirtualDressingRoom";
 import VirtualModel from "./screen/VirtualModel";
 import ChatImage from "./screen/ProductImageChat"
+import UpscaleImagePage from "./screen/UpscaleImage";
 
 const socket = io("https://a512-123-25-21-211.ngrok-free.app", {
   retries: 0,
@@ -61,6 +62,10 @@ const App = () => {
         {
           path: "/product-images-editing/background-generator",
           element: <VirtualPhotoshoot />,
+        },
+        {
+          path: '/image-editing/upscale-image',
+          element: <UpscaleImagePage />,
         },
         {
           path: "/virtual-model",
